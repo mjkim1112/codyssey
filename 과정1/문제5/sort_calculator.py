@@ -1,6 +1,11 @@
 def main():
     # selection sort algorithm
-    seq = list(map(float, input("숫자 입력: ").split()))
+    try:
+        seq = list(map(float, input("숫자 입력: ").split()))
+    except ValueError:
+        print("not vaild")
+        return
+        
     n = len(seq)
     
     for i in range(n - 1):
