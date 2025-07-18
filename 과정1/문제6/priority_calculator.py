@@ -33,7 +33,8 @@ def main():
     
         while s:
             output.append(s.pop())
-        
+        if output[-1] not in "+-/*":
+            raise ValueError
         # 계산기 계산
         stack=[]
     
@@ -61,8 +62,9 @@ def main():
         # 숫자가 하나만 들어온 경우
         if len(stack)==1 and len(output)==1:
             raise ValueError
-
-            
+        # 3 3 + 3과 같은 경우 오류
+        if len(stack) !=1:
+            raise ValueError
         print(stack[0])
     
     except ValueError:
