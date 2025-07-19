@@ -141,8 +141,8 @@ else:
     min_path = path_1
 print(min_path)
 
-print(f"Distance for Bandalgom1: {min_distance}")
-print(f"Path: {min_path}")
+df_path = pd.DataFrame(min_path, columns = ['x', 'y'])
+df_path.to_csv('home_to_cafe.csv')
 
 import map_draw
 import matplotlib.pyplot as plt
@@ -154,6 +154,7 @@ x_vals = [x for x, y in min_path]
 y_vals = [y for x, y in min_path]
 ax.plot(x_vals, y_vals, color = 'red', linewidth = 3, zorder = 10)
 plt.show()
+fig.savefig('map_final.png')
 
 ################### 보너스 #########################################
 ###################################################################
